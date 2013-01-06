@@ -1,0 +1,31 @@
+@model Nublr.CustomAlias.ViewModels.AdminCreateViewModel
+@using Orchard.Utility.Extensions;
+@{ Layout.Title = T("Create Custom Alias"); }
+
+@using (Html.BeginFormAntiForgeryPost())
+{
+    @Html.ValidationSummary()
+    <fieldset>
+        <legend>@T("Create Custom Alias")</legend>
+
+        <label for="@Html.FieldIdFor(m => m.Alias)">@T("Alias")</label>
+        <span>@ViewContext.RequestContext.HttpContext.Request.ToApplicationRootUrlString()/</span>
+        <span>@Html.TextBoxFor(m => m.Alias, new { @class = "text" })</span>
+        <span class="hint">@T("The path of the alias e.g., go/alias-name.")</span>
+
+        <label for="@Html.FieldIdFor(m => m.OriginalUrl)">@T("Original Url")</label>
+        <span>@Html.TextBoxFor(m => m.OriginalUrl, new { @class = "large text" })</span>
+        <span class="hint">@T("The actual url that should redirect when the path is requested e.g., http://www.google.com or /blog-post-name")</span>
+
+        <span class="checkbox-and-label">
+            @Html.EditorFor(m => m.Permanent)
+            <label for="@Html.FieldIdFor(m => m.Permanent)" class="forcheckbox">@T("Permanent redirect")</label>
+        </span>
+        <span class="hint">@T("Check to redirect permanently (301)")</span>
+    </fieldset>
+    
+    <fieldset>
+        <input class="button" type="submit" value="@T("Save")" />
+        @Html.ActionLink(T("Cancel").ToString(), "Index", new { }, new { @class = "button" })
+    </fieldset>
+}

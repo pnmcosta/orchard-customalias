@@ -1,38 +1,20 @@
-Orchard Custom Aliases
+Nublr.CustomAlias
 ===================
 
-Name: Custom Alias
-AntiForgery: enabled
-Author: Nublr
-Website: http://www.nublr.pt
-Version: 1.0
-OrchardVersion: 1.6
-Description: Create custom alias for redirect
-FeatureDescription: Create custom alias for redirect
-Category: Content
-Features:
-	Nublr.CustomAlias.ImportExport:
-		Name: Custom Alias ImportExport
-		Description: TODO - Import and export custom aliases
-		Dependencies: Nublr.CustomAlias
-		Category: Content
-	Nublr.CustomAlias.Append:
-		Name: Custom Alias Append
-		Description: TODO - Append/modify querystring/hash values to the original url
-		Dependencies: Nublr.CustomAlias
-		Category: Content
-	Nublr.CustomAlias.Find:
-		Name: Custom Alias Find
-		Description: TODO - Find matching urls on content to import 
-		Dependencies: Nublr.CustomAlias, Nublr.CustomAlias.ImportExport
-		Category: Content
-	Nublr.CustomAlias.Editor:
-		Name: Custom Alias Editor
-		Description: TODO - Override hyperlink selector in content editors to create aliases on the fly
-		Dependencies: Nublr.CustomAlias
-		Category: Content
-	Nublr.CustomAlias.Track:
-		Name: Custom Alias Track
-		Description: TODO - Track custom alias hits 
-		Dependencies: Nublr.CustomAlias
-		Category: Content
+Orchard Project CMS custom aliases for external redirects, with status and permanent redirect features.
+
+Details:
+- Version: 1.0
+- OrchardVersion: 1.6
+
+Todo:
+- Import and export custom aliases
+- Append/modify querystring/hash values to the original url
+- Find matching urls on content to import 
+- Override hyperlink selector in content editors to create aliases on the fly
+- Track custom alias hits
+
+Credits:
+- Author: Nublr (Pedro Maia Costa)
+- Website: http://www.nublr.pt
+- Git: https://github.com/pnmcosta/orchardcontribthumbnails
