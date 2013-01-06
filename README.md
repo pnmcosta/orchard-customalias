@@ -14,7 +14,10 @@ Todo:
 - Override hyperlink selector in content editors to create aliases on the fly
 - Track custom alias hits
 
+Links:
+- Git: https://github.com/pnmcosta/orchardcontribthumbnails
+- Gallery: https://gallery.orchardproject.net/List/Modules/Orchard.Module.Nublr.CustomAlias/1.0
+
 Credits:
 - Author: Nublr (Pedro Maia Costa)
 - Website: http://www.nublr.pt
-- Git: https://github.com/pnmcosta/orchardcontribthumbnails
