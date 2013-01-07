@@ -9,7 +9,6 @@ using System.Web.Routing;
 
 namespace Nublr.CustomAlias.Routing
 {
-    [OrchardFeature("Nublr.CustomAlias")]
     public interface ICustomAliasConstraint : IRouteConstraint, ISingletonDependency
     {
         void SetAlias(IEnumerable<string> aliases);

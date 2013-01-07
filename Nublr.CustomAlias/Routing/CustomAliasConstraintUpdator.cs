@@ -6,7 +6,6 @@ using Orchard.Environment.Extensions;
 
 namespace Nublr.CustomAlias.Routing
 {
-    [OrchardFeature("Nublr.CustomAlias")]
     public interface ICustomAliasConstraintUpdator : IDependency
     {
         void Refresh();
