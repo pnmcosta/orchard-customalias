@@ -2,7 +2,7 @@
 AntiForgery: enabled
 Author: Nublr
 Website: http://www.nublr.pt
-Version: 1.0
+Version: 1.1
 OrchardVersion: 1.6
 Description: Create custom alias for redirect
 FeatureDescription: Create custom alias for redirect
