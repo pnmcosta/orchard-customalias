@@ -24,13 +24,15 @@
         <label for="publishActions">@T("Actions:")</label>
         <select id="publishActions" name="@Html.NameOf(m => m.Options.BulkAction)">
             @Html.SelectOption(options.BulkAction, CustomAliasBulkAction.None, T("Choose action...").ToString())
-            @Html.SelectOption(Model.Options.BulkAction, CustomAliasBulkAction.Enable, T("Enable").ToString()) 
+            @Html.SelectOption(Model.Options.BulkAction, CustomAliasBulkAction.Enable, T("Enable").ToString())
             @Html.SelectOption(Model.Options.BulkAction, CustomAliasBulkAction.Disable, T("Disable").ToString())
             @Html.SelectOption(options.BulkAction, CustomAliasBulkAction.Delete, T("Delete").ToString())
         </select>
         <button type="submit" name="submit.BulkEdit" value="@T("Apply")">@T("Apply")</button>
     </fieldset>
     <fieldset class="bulk-actions">
+        <label for="@Html.FieldIdFor(m => m.Options.Search)">@T("Filter:")</label>
+        @Html.TextBoxFor(m => m.Options.Search, new { @class = "text-box" })
         <label for="filterResults">@T("Sort by:")</label>
         <select id="filterResults" name="@Html.NameOf(m => m.Options.Order)">
             @Html.SelectOption(options.Order, CustomAliasOrder.Alias, T("Alias").ToString())
@@ -63,19 +65,19 @@
                 index++;
             
                 <tr>
-                    <td >
+                    <td>
                         <input type="hidden" value="@Model.Aliases[index].Record.Id" name="@Html.FieldNameFor(m => Model.Aliases[index].Record.Id)"/>
                         <input type="checkbox" value="true" name="@Html.FieldNameFor(m => Model.Aliases[index].IsChecked)"/>
                     </td>
                     <td>
                         @if (record.Enabled)
                         { 
-                        <img class="icon" src="@Href("~/Modules/Orchard.Users/Content/Admin/images/online.gif") " alt="@T("Enabled") " title="@T("Alias is enabled")" /> 
+                            <img class="icon" src="@Href("~/Modules/Orchard.Users/Content/Admin/images/online.gif") " alt="@T("Enabled") " title="@T("Alias is enabled")" /> 
                         }
                         else
                         { 
-                        <img class="icon" src="@Href("~/Modules/Orchard.Users/Content/Admin/images/offline.gif") " alt="@T("Disabled") " title="@T("Alias is disabled")" />
-                        } 
+                            <img class="icon" src="@Href("~/Modules/Orchard.Users/Content/Admin/images/offline.gif") " alt="@T("Disabled") " title="@T("Alias is disabled")" />
+                        }
                         @Html.Link(record.Alias, Href("~/" + record.Alias))
                     </td>
                     <td>
@@ -99,4 +101,21 @@
 
         @Display(Model.Pager)
     </fieldset>
+}
+@{
+    using (Script.Foot())
+    {
+    <script type="text/javascript">
+        $(function () {
+            $("#@Html.FieldIdFor(m => m.Options.Search)").keypress(function (e) {
+                if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {
+                    $('button[name="submit.Filter"]').click();
+                    return false;
+                } else {
+                    return true;
+                }
+            });
+        });
+    </script>
+    }
 }
