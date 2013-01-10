@@ -16,7 +16,7 @@ Todo:
 
 Links:
 - Git: https://github.com/pnmcosta/orchardcontribthumbnails
-- Gallery: https://gallery.orchardproject.net/List/Modules/Orchard.Module.Nublr.CustomAlias/1.0
+- Gallery: https://gallery.orchardproject.net/List/Modules/Orchard.Module.Nublr.CustomAlias
 - Blog: http://www.nublr.pt/blog/2013/01/07/modulo-orchard-custom-alias
 
 Credits:
