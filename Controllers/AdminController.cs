@@ -159,7 +159,10 @@ namespace Nublr.CustomAlias.Controllers
             {
                 var alias = _customAliasService.Create(viewModel.Alias, viewModel.OriginalUrl, viewModel.Permanent, true);
                 if (alias != null)
+                {
+                    Services.Notifier.Information(T("Custom Alias Created"));
                     return RedirectToAction("Edit", new { id = alias.Id });
+                }
             }
 
             return View(viewModel);
